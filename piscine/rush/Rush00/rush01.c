@@ -12,28 +12,73 @@
 
 void	ft_putchar(char c);
 
+static void	print_first_line(int cols)
+{
+	int	i;
+
+	i = 0;
+	while (i < cols)
+	{
+		if (i == 0)
+			ft_putchar('/');
+		else if (i == cols - 1)
+			ft_putchar('\\');
+		else
+			ft_putchar('*');
+		i += 1;
+	}
+	ft_putchar('\n');
+}
+
+static void	print_middle_lines(int cols)
+{
+	int	i;
+
+	i = 0;
+	while (i < cols)
+	{
+		if (i == 0 || i == cols - 1)
+			ft_putchar('*');
+		else
+			ft_putchar(' ');
+		i += 1;
+	}
+	ft_putchar('\n');
+}
+
+static void	print_last_line(int cols)
+{
+	int	i;
+
+	i = 0;
+	while (i < cols)
+	{
+		if (i == 0)
+			ft_putchar('\\');
+		else if (i == cols - 1)
+			ft_putchar('/');
+		else
+			ft_putchar('*');
+		i += 1;
+	}
+	ft_putchar('\n');
+}
+
 void	rush(int x, int y)
 {
-	int i;
-	int j;
+	int	rows;
 
-	i = 1;
-	while (i <= y)
+	rows = 0;
+	if (x == 0)
+		return ;
+	while (rows < y)
 	{
-		j = 1;
-		while (j <= x)
-		{
-			if ((i == 1 && j == 1) || (i == y && j == x && j != 1 && i != 1))
-				ft_putchar('/');
-			else if ((i == 1 && j == x) || (i == y && j == 1))
-				ft_putchar('\\');
-			else if ((i == 1) || (i == y) || (j == 1) || (j == x))
-				ft_putchar('*');
-			else
-				ft_putchar(' ');
-			j += 1;
-		}
-		ft_putchar('\n');
-		i += 1;
+		if (rows == 0)
+			print_first_line(x);
+		else if (rows == y - 1)
+			print_last_line(x);
+		else
+			print_middle_lines(x);
+		rows += 1;
 	}
 }
