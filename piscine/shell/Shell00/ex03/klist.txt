@@ -1,0 +1,10 @@
+Credentials cache: API:1424471
+        Principal: jdanelon@42SP.ORG.BR
+
+  Issued                Expires               Principal
+Nov 18 18:24:37 2019  Nov 25 18:24:30 2019  krbtgt/42SP.ORG.BR@42SP.ORG.BR
+Credentials cache: API:1424471
+        Principal: jdanelon@42SP.ORG.BR
+
+  Issued                Expires               Principal
+Nov 19 10:59:37 2019  Nov 26 10:59:30 2019  krbtgt/42SP.ORG.BR@42SP.ORG.BR
