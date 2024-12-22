@@ -1,3 +1,4 @@
 *.pdf
 *a.out
 *main*.c
+*teste*.c
