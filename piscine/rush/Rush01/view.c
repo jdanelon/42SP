@@ -1,4 +1,4 @@
-#include <stdlib.h>
+#include "rush01.h"
 
 char	**init_view(char *in)
 {
