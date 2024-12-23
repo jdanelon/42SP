@@ -12,14 +12,25 @@
 
 #include "rush01.h"
 
-static void	print_sol(char **view, char **grid)
+static void	print_sol(char **grid)
 {
-	printf("  %s\n", view[0]);
-	printf("%c %s %c\n", view[2][0], grid[0], view[3][0]);
-	printf("%c %s %c\n", view[2][1], grid[1], view[3][1]);
-	printf("%c %s %c\n", view[2][2], grid[2], view[3][2]);
-	printf("%c %s %c\n", view[2][3], grid[3], view[3][3]);
-	printf("  %s\n", view[1]);
+	int	i;
+	int	j;
+
+	i = 0;
+	while (i < 4)
+	{
+		j = 0;
+		while (j < 4)
+		{
+			ft_putchar(grid[i][j]);
+			if (j != 3)
+				ft_putchar(' ');
+			j++;
+		}
+		ft_putchar('\n');
+		i++;
+	}
 }
 
 static void	run_main_loop(char **view, char **grid, int row, int col, int *num_sols)
@@ -31,7 +42,7 @@ static void	run_main_loop(char **view, char **grid, int row, int col, int *num_s
 	{
 		if (validate_col(view, grid) == OK)
 		{
-			print_sol(view, grid);
+			print_sol(grid);
 			(*num_sols)++;
 			return ;
 		}
