@@ -1,0 +1,3 @@
+objs/*.o
+ft_display_file
+teste*

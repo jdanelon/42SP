@@ -12,23 +12,28 @@
 
 NAME = libft.a
 
-CC = gcc
-
-CFLAGS = -Wall -Wextra -Werror
-
 SRCS_PATH = ./srcs
+
+OBJS_PATH = ./srcs
 
 SRCS = ft_putchar.c ft_swap.c ft_putstr.c ft_strlen.c ft_strcmp.c
 
-OBJS = $(addprefix $(SRCS_PATH)/, $(SRCS:.c=.o))
+OBJS = $(addprefix $(OBJS_PATH)/, $(SRCS:.c=.o))
 
 INCLUDES = ./includes
+
+CC = gcc
+
+FLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
 	ar rc $(NAME) $(OBJS)
 	ranlib $(NAME)
+
+$(OBJS_PATH)/%.o: $(SRCS_PATH)/%.c
+	$(CC) -g $(FLAGS) -c $< -o $@
 
 clean:
 	$(RM) $(OBJS)
