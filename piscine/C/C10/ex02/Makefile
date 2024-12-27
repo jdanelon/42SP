@@ -4,7 +4,9 @@ SRCS_PATH = ./srcs
 
 OBJS_PATH = ./objs
 
-SRCS = ft_tail.c
+SRCS = ft_tail.c \
+		handle_prints.c \
+		utils.c
 
 OBJS = $(addprefix $(OBJS_PATH)/, $(SRCS:.c=.o))
 
